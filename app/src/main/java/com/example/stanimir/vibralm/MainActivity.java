@@ -40,5 +40,6 @@ public class MainActivity extends ActionBarActivity {
 
     public void CustomVB(View view){
         Intent intent = new Intent(this,CustomVB.class);
+        startActivity(intent);
     }
 }
