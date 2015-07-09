@@ -1,21 +1,24 @@
 package com.example.stanimir.vibralm;
 
-import android.content.Intent;
+
+
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.content.Intent;
+/**
+ * Created by Stanimir on 9.7.2015 г..
+ */
 
-
-public class MainActivity extends ActionBarActivity {
+public class CustomVB extends ActionBarActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.custom_vb);
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -36,9 +39,5 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void CustomVB(View view){
-        Intent intent = new Intent(this,CustomVB.class);
     }
 }
