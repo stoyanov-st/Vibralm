@@ -11,14 +11,15 @@
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:text="@string/set"
-        android:id="@+id/button4"
+        android:id="@+id/customVBsetButton"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="setCustomVB"/>
 
     <TimePicker
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/timePicker"
+        android:id="@+id/customVBtimePicker"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

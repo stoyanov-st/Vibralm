@@ -1,10 +1,13 @@
 package com.example.stanimir.vibralm;
 
+import android.app.AlertDialog;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.view.View;
+import android.widget.NumberPicker;
+import android.widget.TimePicker;
 
 public class CustomVB extends ActionBarActivity {
 
@@ -34,5 +37,12 @@ public class CustomVB extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void setCustomVB(TimePicker  view, int hour, int minute){
+        TimePicker vBtime = (TimePicker) findViewById(R.id.customVBtimePicker);
+        vBtime.clearFocus();
+        int hours = vBtime.getCurrentHour();
+        int minutes = vBtime.getCurrentMinute();
     }
 }
