@@ -1,13 +1,15 @@
 package com.example.stanimir.vibralm;
 
-import android.app.AlertDialog;
+import android.content.Context;
+import android.media.AudioManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.NumberPicker;
 import android.widget.TimePicker;
+
+import java.util.Calendar;
 
 public class CustomVB extends ActionBarActivity {
 
@@ -15,6 +17,10 @@ public class CustomVB extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_vb);
+        TimePicker myTime = (TimePicker) findViewById(R.id.customVBtimePickerStart);
+        myTime.setIs24HourView(true);
+        myTime = (TimePicker) findViewById(R.id.customVBtimePickerEnd);
+        myTime.setIs24HourView(true);
     }
 
     @Override
@@ -39,10 +45,22 @@ public class CustomVB extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void setCustomVB(TimePicker  view, int hour, int minute){
-        TimePicker vBtime = (TimePicker) findViewById(R.id.customVBtimePicker);
-        vBtime.clearFocus();
-        int hours = vBtime.getCurrentHour();
-        int minutes = vBtime.getCurrentMinute();
+    public void setCustomVB(View view){
+
+        // Get time for start and end
+        TimePicker vbTime = (TimePicker) findViewById(R.id.customVBtimePickerStart);
+        vbTime.clearFocus();
+        int hoursStart = vbTime.getCurrentHour();
+        int minutesStart = vbTime.getCurrentMinute();
+        int hoursEnd = vbTime.getCurrentHour();
+        int minutesEnd = vbTime.getCurrentMinute();
+
+        // Get current Volume Level
+        AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        int currentVolume = audio.getStreamVolume(AudioManager.STREAM_RING);
+
+        //Set to vibration
+        audio.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
     }
+
 }

@@ -15,11 +15,21 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:onClick="setCustomVB"/>
+    <TimePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/customVBtimePickerStart"
+        android:timePickerMode="spinner"
+        android:layout_above="@+id/customVBtimePickerEnd"
+        android:layout_centerHorizontal="true" />
 
     <TimePicker
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/customVBtimePicker"
-        android:layout_alignParentTop="true"
+        android:id="@+id/customVBtimePickerEnd"
+        android:timePickerMode="spinner"
+        android:layout_above="@+id/customVBsetButton"
         android:layout_centerHorizontal="true" />
+
+
 </RelativeLayout>
